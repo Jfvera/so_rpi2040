@@ -27,7 +27,7 @@ target_link_libraries(interprete
 
 # 7. Habilitar la salida por USB (Serial) y/o UART
 pico_enable_stdio_usb(interprete 1)
-pico_enable_stdio_uart(interprete 0)
+pico_enable_stdio_uart(interprete 1)
 
 # 8. Crear los archivos extra (.uf2, .bin, .elf) para flashear
 pico_add_extra_outputs(interprete)

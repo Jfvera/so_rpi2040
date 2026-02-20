@@ -872,10 +872,24 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/st
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
+CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o: CMakeFiles/interprete.dir/flags.make
+CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
+CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c
+
+CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c > CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+
+CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i: cmake_force
@@ -889,7 +903,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_us
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i: cmake_force
@@ -903,7 +917,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_us
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i: cmake_force
@@ -917,7 +931,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_us
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i: cmake_force
@@ -931,7 +945,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_unique_i
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i: cmake_force
@@ -945,7 +959,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_flas
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i: cmake_force
@@ -959,7 +973,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/hardware_xip_
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i: cmake_force
@@ -973,7 +987,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/ras
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i: cmake_force
@@ -987,7 +1001,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/portable/ras
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i: cmake_force
@@ -1001,7 +1015,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd.
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i: cmake_force
@@ -1015,7 +1029,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/device/usbd_
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i: cmake_force
@@ -1029,7 +1043,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/audio/
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i: cmake_force
@@ -1043,7 +1057,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/cdc/cd
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i: cmake_force
@@ -1057,7 +1071,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/df
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i: cmake_force
@@ -1071,7 +1085,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/dfu/df
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i: cmake_force
@@ -1085,7 +1099,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/hid/hi
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i: cmake_force
@@ -1099,7 +1113,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/midi/m
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i: cmake_force
@@ -1113,7 +1127,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/msc/ms
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i: cmake_force
@@ -1127,7 +1141,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ec
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i: cmake_force
@@ -1141,7 +1155,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/net/nc
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i: cmake_force
@@ -1155,7 +1169,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/usbtmc
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i: cmake_force
@@ -1169,7 +1183,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/vendor
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i: cmake_force
@@ -1183,7 +1197,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/class/video/
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.i: cmake_force
@@ -1197,7 +1211,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/tusb.c.s: cm
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: /home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o -c /home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i: cmake_force
@@ -1211,7 +1225,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/lib/tinyusb/src/common/tusb_
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o: CMakeFiles/interprete.dir/flags.make
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o: /home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o: CMakeFiles/interprete.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o -MF CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o.d -o CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o -c /home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c
 
 CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i: cmake_force
@@ -1282,6 +1296,7 @@ interprete_OBJECTS = \
 "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o" \
 "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o" \
 "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o" \
+"CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o" \
 "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o" \
 "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o" \
 "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o" \
@@ -1369,6 +1384,7 @@ interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_comm
 interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
 interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
 interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
 interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o
 interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
 interprete.elf: CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
@@ -1398,7 +1414,7 @@ interprete.elf: CMakeFiles/interprete.dir/build.make
 interprete.elf: pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default_library.dir/bs2_default_padded_checksummed.S.o
 interprete.elf: /home/jfvera/pico/pico-sdk/src/rp2_common/pico_crt0/rp2040/memmap_default.ld
 interprete.elf: CMakeFiles/interprete.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Linking CXX executable interprete.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jfvera/SO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Linking CXX executable interprete.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/interprete.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/arm-none-eabi-objdump -h /home/jfvera/SO/build/interprete.elf > interprete.dis
 	/usr/bin/arm-none-eabi-objdump -d /home/jfvera/SO/build/interprete.elf >> interprete.dis

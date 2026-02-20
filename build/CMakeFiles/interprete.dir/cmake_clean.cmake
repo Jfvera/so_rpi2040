@@ -140,6 +140,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o.d"
   "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o"
   "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o.d"
+  "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o"
+  "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o.d"
   "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o"
   "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o.d"
   "CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o"

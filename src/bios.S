@@ -21,3 +21,16 @@ wait_tx:
     
     str r0, [r1, #0x00]      @ Escribe el carácter en UARTDR
     bx lr                    @ Regresa
+
+
+.global bios_getchar
+.thumb_func
+bios_getchar:
+    ldr r1, =0x40034000      @ UART0 base
+wait_rx:
+    ldr r2, [r1, #0x18]      @ UARTFR (Flag register)
+    movs r3, #0x10           @ Bit 4: RXFE (FIFO vacía)
+    tst r2, r3
+    bne wait_rx              @ Si está vacía, espera
+    ldr r0, [r1, #0x00]      @ Lee el carácter
+    bx lr

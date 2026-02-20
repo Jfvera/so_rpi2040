@@ -1855,6 +1855,30 @@ home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/interprete.dir/build.make CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 .PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
+home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.o: home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+.PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.o
+
+# target to build an object file
+home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/interprete.dir/build.make CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+.PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.o
+
+home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+.PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
+
+# target to preprocess a source file
+home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/interprete.dir/build.make CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+.PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+
+home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+.PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
+
+# target to generate assembly for a file
+home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/interprete.dir/build.make CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+.PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+
 home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.o: home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.o
 .PHONY : home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.o
 
@@ -2228,6 +2252,9 @@ help:
 	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.o"
 	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.i"
 	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.s"
+	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.o"
+	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
+	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
 	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.o"
 	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i"
 	@echo "... home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s"
