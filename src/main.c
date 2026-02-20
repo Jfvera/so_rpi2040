@@ -7,6 +7,14 @@
 #define MAX_ARGS 8
 #define BUFFER_SIZE 64
 
+enum { ERROR = -1, HELP, PRINT, CLS };
+
+int identificar_comando(char *input) {
+		if ((strcmp(input,"print") == 0) ||  (strcmp(input,"PRINT") == 0)) return PRINT;
+		if ((strcmp(input,"help") == 0) ||  (strcmp(input,"HELP") == 0)) return HELP;
+		if ((strcmp(input,"cls") == 0) ||  (strcmp(input,"CLS") == 0)) return CLS;;
+}
+
 // --- FUNCIONES DE APOYO (Capa intermedia) ---
 
 void print_biosstring(const char *p) {
@@ -66,22 +74,30 @@ void ejecutar_interprete() {
         }
 
         if (argc == 0) continue; 
-
-        // --- LÓGICA DE COMANDOS ---
-        if (strcmp(argv[0], "PRINT") == 0) {
-            if (argc > 1) {
-                print_biosstring(argv[1]); 
-                print_biosstring("\r\n");
-            } else {
+		switch (identificar_comando(argv[0])) {
+			case PRINT: {
+				if (argc > 1) {
+                	print_biosstring(argv[1]); 
+                	print_biosstring("\r\n");
+            	} else {
                 print_biosstring("ERROR: Nada que imprimir\r\n");
-            }
-        } 
-        else if (strcmp(argv[0], "HELP") == 0) {
-            print_biosstring("Comandos: PRINT <texto>, HELP\r\n");
-        }
-        else {
-            print_biosstring("ERROR: Comando desconocido\r\n");
-        }
+            	}
+            	break;
+        	}
+        	case HELP: {
+        		print_biosstring("Los comandos disponibles son:\r\n");
+        		print_biosstring("	PRINT <texto>\r\n");
+        		print_biosstring("	CLS \r\n");
+        		break;
+        	}
+			case CLS: {
+				bios_cls();
+				break;
+			}
+        	default: {
+        		print_biosstring("ERROR: Comando desconocido \r\n");
+        	} 
+    	}
     }
 }
 

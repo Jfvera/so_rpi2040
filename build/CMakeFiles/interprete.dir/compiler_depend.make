@@ -3036,6 +3036,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/st
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio/driver.h \
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
+  /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
   /usr/include/newlib/_ansi.h \
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/assert.h \
@@ -3419,6 +3420,7 @@ CMakeFiles/interprete.dir/home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdlib/s
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
+  /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
   /usr/include/newlib/_ansi.h \
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/assert.h \
@@ -3528,6 +3530,7 @@ CMakeFiles/interprete.dir/src/main.c.o: /home/jfvera/SO/src/main.c \
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
   /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h \
+  /home/jfvera/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
   /usr/include/newlib/_ansi.h \
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/alloca.h \
