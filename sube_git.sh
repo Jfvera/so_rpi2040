@@ -27,6 +27,6 @@ git commit -m "$mensaje"
 
 # 5. Subir a la nube (ajusta 'main' si tu rama se llama 'master')
 echo -e "${AZUL}Subiendo a la nube...${NC}"
-git push origin master
+git push origin main
 
 echo -e "${VERDE}¡Hecho! Código actualizado en el repositorio.${NC}"
