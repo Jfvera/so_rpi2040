@@ -3607,6 +3607,7 @@ CMakeFiles/interprete.dir/src/main.c.o
  /usr/include/newlib/_newlib_version.h
  /usr/include/newlib/alloca.h
  /usr/include/newlib/assert.h
+ /usr/include/newlib/ctype.h
  /usr/include/newlib/machine/_default_types.h
  /usr/include/newlib/machine/_types.h
  /usr/include/newlib/machine/ieeefp.h

@@ -12,7 +12,7 @@ CMakeFiles/interprete.dir/src/main.c.o: /home/jfvera/SO/src/main.c \
  /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
  /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h \
  /usr/include/newlib/stdlib.h /usr/include/newlib/machine/stdlib.h \
- /usr/include/newlib/alloca.h \
+ /usr/include/newlib/alloca.h /usr/include/newlib/ctype.h \
  /home/jfvera/pico/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /home/jfvera/pico/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/jfvera/pico/pico-sdk/src/common/pico_base_headers/include/pico/types.h \

@@ -3535,6 +3535,7 @@ CMakeFiles/interprete.dir/src/main.c.o: /home/jfvera/SO/src/main.c \
   /usr/include/newlib/_newlib_version.h \
   /usr/include/newlib/alloca.h \
   /usr/include/newlib/assert.h \
+  /usr/include/newlib/ctype.h \
   /usr/include/newlib/machine/_default_types.h \
   /usr/include/newlib/machine/_types.h \
   /usr/include/newlib/machine/ieeefp.h \
@@ -3558,6 +3559,8 @@ CMakeFiles/interprete.dir/src/main.c.o: /home/jfvera/SO/src/main.c \
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
   /usr/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
+
+/usr/include/newlib/ctype.h:
 
 /home/jfvera/pico/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:
 

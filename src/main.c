@@ -1,449 +1,277 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "pico/stdlib.h"
 #include "bios.h"
 
-#define MAX_ARGS 8
-#define BUFFER_SIZE 64
-
 #define MAX_LINEAS 100
-#define TAM_LINEA 64
-char programa[MAX_LINEAS][TAM_LINEA];
+#define TAM_LINEA 64   
+#define MAX_VARS 64
 
-//  --- Definimos la estructura para almacenar las variables ----
+char programa_memoria[MAX_LINEAS][TAM_LINEA];
+char *cursor; 
 
 typedef enum { T_NUMBER, T_STRING } VarType;
 
 typedef struct {
-    char nombre[16];   // Nombre de la variable (ej: "ANCHO", "NOMBRE$")
-    VarType tipo;      // ¿Es número o texto?
+    char nombre[16];
+    VarType tipo;      
     union {
         double valor_num;
-        char *valor_str; // Puntero a la cadena en memoria (heap)
+        char *valor_str; 
     };
     bool ocupada;
 } Variable;
 
-
-// ---  Definimos la tabla donde se almacenan las variables ----
-
-#define MAX_VARS 64
 Variable tabla_variables[MAX_VARS];
 
+// --- PROTOTIPOS ---
+void print_biosstring(const char *p);
+void gets_biosstring(char buffer[], int size);
+void saltar_espacios();
+double evaluar_expresion();
+double evaluar_termino();
+double evaluar_factor();
+void interpretar_linea(char *linea);
+int buscar_variable(char *nombre);
+void establecer_variable(const char *nombre, VarType tipo, double n, const char *s);
 
-// -- Definimos los tipos de comandos posibles ---
-
-
-enum { ERROR = -1, HELP, PRINT, CLS, RUN, LET };
-
-int identificar_comando(char *input) {
-		if ((strcmp(input,"print") == 0) ||  (strcmp(input,"PRINT") == 0)) return PRINT;
-		if ((strcmp(input,"help") == 0) ||  (strcmp(input,"HELP") == 0)) return HELP;
-		if ((strcmp(input,"cls") == 0) ||  (strcmp(input,"CLS") == 0)) return CLS;
-		if ((strcmp(input,"run") == 0) ||  (strcmp(input,"RUN") == 0)) return RUN;   				 
-		if ((strcmp(input,"let") == 0) ||  (strcmp(input,"LET") == 0)) return LET; 
-}
-
-
-// --- Función que hace la búsqueda de una variable ----
-
-int buscar_variable(char *nombre) {
-    for (int i = 0; i < MAX_VARS; i++) {
-        if (tabla_variables[i].ocupada && strcmp(tabla_variables[i].nombre, nombre) == 0) {
-            return i;
-        }
-    }
-    return -1; // No existe
-}
-
-// --- FUNCIONES DE APOYO (Capa intermedia) ---
-
+// --- BIOS Y AUXILIARES ---
 void print_biosstring(const char *p) {
-    while (*p != '\0') {
-        bios_putchar(*p);while (*p && *p != '\r' && *p != '\n') {                                                                                                              
-         // CASO: CADENA LITERAL "HOLA"                                                                                                                    
-         if (*p == '"') {                                                                                                                                  
-             p++;                                                                                                                                          
-             while (*p && *p != '"') bios_putchar(*p++);                                                                                                   
-             if (*p == '"') p++;                                                                                                                           
-         }                                                                                                                                                 
-         // CASO: VARIABLE (ANCHO, NOMBRE$)                                                                                                                
-         else if (isalpha(*p)) {                                                                                                                           
-             char nombre_var[16];                                                                                                                          
-             int i = 0;                                                                                                                                    
-             // Extraemos el nombre (letras, números o el signo $ para strings)                                                                            
-             while (isalnum(*p) || *p == '$') {                                                                                                            
-                 if (i < 15) nombre_var[i++] = *p;                                                                                                         
-                 p++;                                                                                                                                      
-             }                                                                                                                                             
-             nombre_var[i] = '\0';         
-        p++;
-    }
+    while (*p) bios_putchar(*p++);
 }
 
-void gets_biosstring(char *buffer, int size) {
+void gets_biosstring(char buffer[], int size) {
     int i = 0;
     while (i < size - 1) {
         char c = bios_getchar();
-        
-        // Manejar Enter (CR o LF)
         if (c == '\r' || c == '\n') break;
-        
-        // Manejar Backspace (Borrar)
         if (c == '\b' || c == 127) {
-            if (i > 0) {
-                i--;
-                print_biosstring("\b \b"); 
-            }
+            if (i > 0) { i--; print_biosstring("\b \b"); }
             continue;
         }
-
-        bios_putchar(c); // Echo: para ver lo que escribes
+        bios_putchar(c);
         buffer[i++] = c;
     }
     buffer[i] = '\0';
     print_biosstring("\r\n");
 }
 
-// ---- FUNCIÓN QUE SALTA LOS ESPACIOS EN BLANCO DE LA LÍNEA DE COMANDOS ---
-
-void skip_spaces(char **ptr) {
-    while (**ptr && isspace(**ptr)) {
-        (*ptr)++;
-    }
+void saltar_espacios() {
+    // Usamos isspace pero también forzamos el avance si hay caracteres no imprimibles bajos
+    while (*cursor && (isspace((unsigned char)*cursor) || (unsigned char)*cursor < 33)) cursor++; 
 }
 
-// Prototipos necesarios para que las funciones se conozcan entre sí
-double evaluar_expresion();
-double evaluar_termino();
-double evaluar_factor();
+// --- EVALUADOR REFORZADO ---
 
-// 1. NIVEL: Sumas y Restas (Prioridad baja)
-double evaluar_expresion() {
-    double resultado = evaluar_termino();
-    saltar_espacios();
-
-    while (*cursor == '+' || *cursor == '-') {
-        char op = *cursor;
-        cursor++; // Avanzar tras el '+' o '-'
-        if (op == '+') resultado += evaluar_termino();
-        else resultado -= evaluar_termino();
-        saltar_espacios();
-    }
-    return resultado;
-}
-
-// 2. NIVEL: Multiplicaciones y Divisiones (Prioridad media)
-double evaluar_termino() {
-    double resultado = evaluar_factor();
-    saltar_espacios();
-
-    while (*cursor == '*' || *cursor == '/') {
-        char op = *cursor;
-        cursor++; // Avanzar tras el '*' o '/'
-        if (op == '*') {
-            resultado *= evaluar_factor();
-        } else {
-            double divisor = evaluar_factor();
-            if (divisor != 0) {
-                resultado /= divisor;
-            } else {
-                print_biosstring("ERROR: Division por cero\r\n");
-            }
-        }
-        saltar_espacios();
-    }
-    return resultado;
-}
-
-// 3. NIVEL: Números, Variables y Paréntesis (Prioridad alta)
 double evaluar_factor() {
-    saltar_espacios();
-    double resultado = 0;
-
-    // Manejo de paréntesis: ( expresión )
+    saltar_espacios(); // <--- ASEGURAR LIMPIEZA ANTES DE EMPEZAR
     if (*cursor == '(') {
-        cursor++; // Saltar '('
-        resultado = evaluar_expresion();
+        cursor++;
+        double r = evaluar_expresion();
         saltar_espacios();
-        if (*cursor == ')') cursor++; // Saltar ')'
-        return resultado;
+        if (*cursor == ')') cursor++;
+        return r;
     }
-
-    // Manejo de números
     if (isdigit(*cursor) || *cursor == '.') {
-        char *endptr;
-        resultado = strtod(cursor, &endptr);
-        cursor = endptr; // strtod nos dice dónde termina el número
-    } 
-    // Manejo de variables
-    else if (isalpha(*cursor)) {
-        char nombre_var[16];
-        int i = 0;
-        while (isalnum(*cursor) || *cursor == '$') {
-            if (i < 15) nombre_var[i++] = *cursor;
-            cursor++;
+        char *final;
+        double r = strtod(cursor, &final);
+        cursor = final;
+        saltar_espacios(); // <--- CLAVE: Saltar espacios DESPUÉS de leer el número
+        return r;
+    }
+    if (isalpha(*cursor)) {
+        char nombre[16]; int i = 0;
+        while (isalnum(*cursor) || *cursor == '$') { 
+            if (i < 15) nombre[i++] = *cursor; 
+            cursor++; 
         }
-        nombre_var[i] = '\0';
-
-        int idx = buscar_variable(nombre_var);
-        if (idx != -1 && tabla_variables[idx].tipo == T_NUMBER) {
-            resultado = tabla_variables[idx].valor_num;
-        } else {
-            resultado = 0; // Comportamiento BASIC: variable no definida es 0
+        nombre[i] = '\0';
+        saltar_espacios(); // <--- CLAVE: Saltar espacios DESPUÉS de la variable
+        int idx = buscar_variable(nombre);
+        if (idx != -1) {
+            if (tabla_variables[idx].tipo == T_NUMBER) return tabla_variables[idx].valor_num;
+            else { print_biosstring("Error: Type Mismatch\r\n"); return 0; }
         }
     }
-    return resultado;
+    return 0;
 }
 
-void ejecutar_print(char *p) {
-    skip_spaces(&p);
-    
-    while (*p && *p != '\r' && *p != '\n') {
-        // CASO: CADENA LITERAL "HOLA"
-        if (*p == '"') {
-            p++; 
-            while (*p && *p != '"') bios_putchar(*p++);
-            if (*p == '"') p++;
+double evaluar_termino() {
+    double r = evaluar_factor();
+    saltar_espacios();
+    while (*cursor == '*' || *cursor == '/') {
+        char op = *cursor++;
+        saltar_espacios(); // <--- SALTAR ESPACIOS TRAS EL OPERADOR
+        if (op == '*') r *= evaluar_factor();
+        else {
+            double d = evaluar_factor();
+            if (d != 0) r /= d;
         }
-        // CASO: VARIABLE (ANCHO, NOMBRE$)
-        else if (isalpha(*p)) {
-            char nombre_var[16];
-            int i = 0;
-            // Extraemos el nombre (letras, números o el signo $ para strings)
-            while (isalnum(*p) || *p == '$') {
-                if (i < 15) nombre_var[i++] = *p;
-                p++;
-            }
-            nombre_var[i] = '\0';
-
-            int idx = buscar_variable(nombre_var);
-            if (idx == -1) {
-                // OPCIÓN A: Comportamiento BASIC clásico (imprimir cero o nada)
-                if (nombre_var[strlen(nombre_var)-1] == '$') print_biosstring("");
-                else bios_print_str("0");
-            } else {
-                // OPCIÓN B: La variable existe, imprimimos su valor real
-                if (tabla_variables[idx].tipo == T_NUMBER) {
-                    char buf[32];
-                    sprintf(buf, "%g", tabla_variables[idx].valor_num);
-                    pritn_biosstring(buf);
-                } else {
-                    if (tabla_variables[idx].valor_str) print_biosstring(tabla_variables[idx].valor_str);
-                }
-            }
-        }
-        skip_spaces(&p);
-        if (*p == ',' || *p == ';') {
-            if (*p == ',') print_biosstring("    ");
-            p++;
-            skip_spaces(&p);
-        } else break;
+        saltar_espacios();
     }
-    print_biosstring("\r\n");
+    return r;
+}
+
+double evaluar_expresion() {
+    double r = evaluar_termino();
+    saltar_espacios();
+    while (*cursor == '+' || *cursor == '-') {
+        char op = *cursor++;
+        saltar_espacios(); // <--- SALTAR ESPACIOS TRAS EL OPERADOR
+        if (op == '+') r += evaluar_termino();
+        else r -= evaluar_termino();
+        saltar_espacios();
+    }
+    return r;
+}
+
+// --- GESTIÓN DE VARIABLES ---
+
+int buscar_variable(char *nombre) {
+    for (int i = 0; i < MAX_VARS; i++) {
+        if (tabla_variables[i].ocupada && strcmp(tabla_variables[i].nombre, nombre) == 0)
+            return i;
+    }
+    return -1;
 }
 
 void establecer_variable(const char *nombre, VarType tipo, double n, const char *s) {
-    // 1. Buscamos si ya existe
-    int idx = -1;
-
-    idx = buscar_variable(nombre);
-
-    // 2. Si no existe, buscamos un hueco libre para crearla
+    int idx = buscar_variable((char*)nombre);
     if (idx == -1) {
         for (int i = 0; i < MAX_VARS; i++) {
             if (!tabla_variables[i].ocupada) {
                 idx = i;
                 strncpy(tabla_variables[idx].nombre, nombre, 15);
-                tabla_variables[idx].nombre[15] = '\0';
                 tabla_variables[idx].ocupada = true;
-                tabla_variables[idx].valor_str = NULL; // Inicializamos el puntero
+                tabla_variables[idx].valor_str = NULL; 
                 break;
             }
         }
     }
+    if (idx == -1) return;
 
-    if (idx == -1) {
-        print_biosstring("ERROR: No hay espacio para más variables\r\n");
-        return;
-    }
-
-    // 3. Gestión de memoria de Cadenas (Crucial en micros)
-    // Si antes era un string y ahora vamos a poner otra cosa, liberamos lo anterior
-    if (tabla_variables[idx].tipo == T_STRING && tabla_variables[idx].valor_str != NULL) {
-        free(tabla_variables[idx].valor_str);
-        tabla_variables[idx].valor_str = NULL;
-    }
-
-    // 4. Asignación del nuevo valor y tipo
-    tabla_variables[idx].tipo = tipo;
+    tabla_variables[idx].tipo = tipo; 
     if (tipo == T_NUMBER) {
         tabla_variables[idx].valor_num = n;
     } else {
-        if (s != NULL) {
-            tabla_variables[idx].valor_str = strdup(s); // Reserva memoria y copia
+        if (tabla_variables[idx].valor_str) free(tabla_variables[idx].valor_str); // <--- LIBERAR MEMORIA
+        tabla_variables[idx].valor_str = strdup(s ? s : ""); // <--- DUPLICAR CADENA
+    }
+}
+
+// --- COMANDOS ---
+
+void ejecutar_print() {
+    saltar_espacios();
+    if (*cursor == '\0') { print_biosstring("\r\n"); return; }
+
+    while (*cursor && *cursor != '\r' && *cursor != '\n') {
+        if (*cursor == '"') {
+            cursor++;
+            while (*cursor && *cursor != '"') bios_putchar(*cursor++);
+            if (*cursor == '"') cursor++;
         } else {
-            tabla_variables[idx].valor_str = strdup(""); 
+            double val = evaluar_expresion();
+            char buf[32]; sprintf(buf, "%g", val);
+            print_biosstring(buf);
         }
+        saltar_espacios(); // <--- LIMPIEZA TRAS EVALUAR
+        if (*cursor == ',' || *cursor == ';') {
+            if (*cursor == ',') print_biosstring("    ");
+            cursor++;
+            saltar_espacios();
+        } else break;
+    }
+    print_biosstring("\r\n");
+}
+
+void ejecutar_let() {
+    char var[16]; int i = 0;
+    saltar_espacios();
+    while (isalnum(*cursor) || *cursor == '$') { if (i < 15) var[i++] = *cursor; cursor++; }
+    var[i] = '\0';
+    saltar_espacios();
+    if (*cursor == '=') cursor++;
+    saltar_espacios();
+
+    if (*cursor == '"') { 
+        cursor++;
+        char tmp[TAM_LINEA]; int j = 0;
+        while (*cursor && *cursor != '"' && j < TAM_LINEA-1) tmp[j++] = *cursor++;
+        tmp[j] = '\0';
+        if (*cursor == '"') cursor++;
+        establecer_variable(var, T_STRING, 0, tmp); 
+    } else { 
+        double val = evaluar_expresion();
+        establecer_variable(var, T_NUMBER, val, NULL); 
     }
 }
 
-void ejecutar_let(char *p) {
-    char nombre_var[16];
-    int i = 0;
+// --- NÚCLEO ---
 
-    skip_spaces(&p);
+void interpretar_linea(char *linea) {
+    cursor = linea;
+    saltar_espacios();
+    if (*cursor == '\0') return;
 
-    // 1. Extraer el nombre de la variable
-    if (!isalpha(*p)) {
-        bios_print_str("ERROR: El nombre de variable debe empezar por letra\r\n");
-        return;
-    }
-
-    while (isalnum(*p) || *p == '$') {
-        if (i < 15) nombre_var[i++] = *p;
-        p++;
-    }
-    nombre_var[i] = '\0';
-
-    // 2. Buscar el signo '='
-    skip_spaces(&p);
-    if (*p != '=') {
-        bios_print_str("ERROR: Se esperaba '='\r\n");
-        return;
-    }
-    p++; // Saltar el '='
-    skip_spaces(&p);
-
-    // 3. Determinar si el valor es Cadena o Número
-    if (*p == '"') {
-        // --- ASIGNACIÓN DE CADENA ---
-        p++; // Saltar comilla inicial
-        char buffer_temp[128];
-        int j = 0;
-        while (*p && *p != '"' && j < 127) {
-            buffer_temp[j++] = *p++;
+    // Modo Guardado
+    if (isdigit(*cursor)) { 
+        int n_lin = atoi(cursor);
+        while(isdigit(*cursor)) cursor++; 
+        saltar_espacios();
+        if (n_lin >= 0 && n_lin < MAX_LINEAS) {
+            if (*cursor == '\0') programa_memoria[n_lin][0] = '\0';
+            else strncpy(programa_memoria[n_lin], linea, TAM_LINEA - 1);
         }
-        buffer_temp[j] = '\0';
-        
-        if (*p == '"') p++; // Saltar comilla final
-        
-        // Llamamos a tu función maestra
-        establecer_variable(nombre_var, T_STRING, 0, buffer_temp);
-    } 
-    else {
-        // --- ASIGNACIÓN DE NÚMERO ---
-        // (En el futuro aquí llamarás a evaluar_expresion)
-        char *endptr;
-        double valor = strtod(p, &endptr);
-        
-        if (p == endptr) {
-            bios_print_str("ERROR: Valor numérico no válido\r\n");
-            return;
-        }
-        
-        // Llamamos a tu función maestra
-        establecer_variable(nombre_var, T_NUMBER, valor, NULL);
+        return; 
     }
+
+    char cmd[16]; int i = 0;
+    while (*cursor && !isspace(*cursor) && i < 15) cmd[i++] = *cursor++;
+    cmd[i] = '\0';
+
+    if (strcasecmp(cmd, "PRINT") == 0) ejecutar_print();
+    else if (strcasecmp(cmd, "LET") == 0) ejecutar_let();
+    else if (strcasecmp(cmd, "LIST") == 0) {
+        for (int j = 0; j < MAX_LINEAS; j++) 
+            if (programa_memoria[j][0]) { print_biosstring(programa_memoria[j]); print_biosstring("\r\n"); }
+    }
+    else if (strcasecmp(cmd, "RUN") == 0) {
+        for (int j = 0; j < MAX_LINEAS; j++) {
+            if (programa_memoria[j][0]) {
+                char temp[TAM_LINEA]; strcpy(temp, programa_memoria[j]);
+                char *p = temp; while(isdigit(*p)) p++;
+                interpretar_linea(p);
+            }
+        }
+    }
+    else if (strcasecmp(cmd, "NEW") == 0) {
+        for(int k=0; k<MAX_VARS; k++) if(tabla_variables[k].ocupada && tabla_variables[k].tipo == T_STRING) free(tabla_variables[k].valor_str);
+        memset(tabla_variables, 0, sizeof(tabla_variables));
+        memset(programa_memoria, 0, sizeof(programa_memoria));
+    }
+    else if (strcasecmp(cmd, "CLS") == 0) bios_cls();
+    else if (cmd[0] != '\0') print_biosstring("Syntax Error\r\n");
 }
-
 
 void ejecutar_interprete() {
-    char linea[BUFFER_SIZE];
-    char *argv[MAX_ARGS];
-    int argc;
-
-    print_biosstring("\r\nSISTEMA INICIADO - BIOS EN RAM\r\n");
-
+    char buffer[TAM_LINEA]; 
+    memset(programa_memoria, 0, sizeof(programa_memoria));
+    memset(tabla_variables, 0, sizeof(tabla_variables));
+    
+    print_biosstring("PICO-BASIC V1.6 READY\r\n");
     while (1) {
-            print_biosstring("\r\n> "); 
-            gets_biosstring(linea, sizeof(linea)); // Tu función de lectura
-    
-            // 1. Limpieza básica: saltar espacios iniciales
-            char *p = linea;
-            while (isspace(*p)) p++;
-            if (*p == '\0') continue; // Línea vacía
-    
-            // 2. ¿EMPIEZA POR NÚMERO? (Modo Programa)
-            if (isdigit(*p)) {
-                int num_linea = (int)strtol(p, &p, 10); // Lee el número y avanza el puntero 'p'
-                
-                if (num_linea >= 0 && num_linea < MAX_LINEAS) {
-                    while (isspace(*p)) p++; // Saltar espacios tras el número
-                    
-                    if (*p == '\0') {
-                        // Si el usuario pone "10" y nada más, borramos la línea
-                        programa_memoria[num_linea][0] != '\0';
-                    } else {
-                        // Guardamos el resto de la cadena en la memoria
-                        strncpy(programa_memoria[num_linea], p, MAX_CHARS_LINEA - 1);
-                        programa_memoria[num_linea][MAX_CHARS_LINEA - 1] = '\0';
-                    }
-                } else {
-                    print_biosstring("ERROR: Numero de linea fuera de rango\r\n");
-                }
-                continue; // Importante: volver al principio del bucle
-            }
-    
-            // 3. MODO DIRECTO (Ejecución inmediata)
-            // Usamos una copia o punteros para no destruir la línea original
-            char *cmd_ptr = p;
-            while (*p && !isspace(*p)) p++; // Buscamos el final del comando (el primer espacio)
-            
-            char comando_temporal[20];
-            int len_cmd = p - cmd_ptr;
-            if (len_cmd >= sizeof(comando_temporal)) len_cmd = sizeof(comando_temporal) - 1;
-            strncpy(comando_temporal, cmd_ptr, len_cmd);
-            comando_temporal[len_cmd] = '\0';
-    
-            // 'p' ahora apunta al inicio de los argumentos
-            skip_spaces(&p); 
-    
-            int id_cmd = identificar_comando(comando_temporal);
-    
-            switch (id_cmd) {
-                case PRINT:
-                    // p apunta a todo lo que hay tras "PRINT" (ej: "A + 5")
-                    ejecutar_print(p); 
-                    break;
-                case CLS:
-                    bios_cls();
-                    break;
-    
-                case RUN:
-                    // Bucle que recorre programa_memoria y llama a ejecutar_linea
-                    ejecutar_programa_completo();
-                    break;
-    
-                case HELP:
-                    print_biosstring("Comandos: PRINT, CLS, RUN, LIST, HELP\r\n");
-                    break;
- 				case LET::                                                        
- 				      ejecutar_let(p);
- 				      break;                                                        
-                default:
-                    print_biosstring("ERROR: Comando desconocido\r\n");
-                    break;
-            }
-        }
+        print_biosstring("> ");
+        gets_biosstring(buffer, TAM_LINEA);
+        interpretar_linea(buffer);
     }
 }
 
 int main() {
-    // Inicialización del hardware (SDK)
     stdio_init_all();
-    
-    // Opcional: Configura el LED de la placa para confirmar arranque
-    const uint LED_PIN = 25;
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
-    gpio_put(LED_PIN, 1);
-
-    // Esperamos 2 segundos para que puedas abrir minicom
     sleep_ms(2000);
-    
     ejecutar_interprete();
-    
     return 0;
 }
